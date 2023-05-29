@@ -13,7 +13,7 @@ export const Board = () => {
         lizard: ['spock', 'paper'],
         spock: ['scissors', 'rock'],
     };
-    const [gameScore, setGameScore] = useState(0);
+    const [gameScore, setGameScore] = useState(Number(localStorage.getItem('RPSLSGameScore')) || 0);
     const [playerChoice, setPlayerChoice] = useState(null);
     const [computerChoice, setComputerChoice] = useState(null);
     const [winner, setWinner] = useState(null);
@@ -24,7 +24,7 @@ export const Board = () => {
                 const opponentChoice = getComputerChoice();
                 setComputerChoice(opponentChoice);
                 setTimeout(() => calculateWinner(opponentChoice), 500)
-            }, 700)
+            }, 500)
         }
     }, [playerTurn])
 
@@ -49,7 +49,9 @@ export const Board = () => {
         }
         let loser = checkLooser(rules[playerChoice], opponentChoice);
         if (loser) {
-            setGameScore(gameScore + 1);
+            const score = gameScore + 1;
+            setGameScore(score);
+            localStorage.setItem('RPSLSGameScore', score.toString());
             setWinner('You win');
         } else {
             setWinner('You lose');
