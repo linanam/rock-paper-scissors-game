@@ -1,13 +1,57 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "variables.css";
+
+@font-face {
+    font-family: BarlowSemiCondensed;
+    src: url(./fonts/BarlowSemiCondensed-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face {
+    font-family: BarlowSemiCondensed;
+    src: url(./fonts/BarlowSemiCondensed-Bold.ttf);
+    font-weight: 700;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    height: 100%;
+}
+
+body {
+    color: var(--main-text-color);
+    font-family: BarlowSemiCondensed, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+
+#root {
+    background: var(--main-bg-bottom);
+    background: linear-gradient(180deg, var(--main-bg-top), var(--main-bg-bottom)) no-repeat;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-width: var(--mobile);
+    overflow: hidden;
+    padding: 30px 0 45px;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: BarlowSemiCondensed, sans-serif;
+}
+
+.winner {
+    box-shadow: 0 0 0 75px rgba(255, 255, 255, 0.03), 0 0 0 45px rgba(255, 255, 255, 0.03),
+            0 0 0 20px rgba(255, 255, 255, 0.03), inset 0 -7px 3px 0 rgba(0, 0, 0, 0.3), 0 3px 2px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+@media only screen and (min-width: 1366px) {
+    #root {
+        padding-top: 47px;
+    }
+
+    .winner {
+        box-shadow: 0 0 0 215px rgba(255, 255, 255, 0.03), 0 0 0 133px rgba(255, 255, 255, 0.03),
+            0 0 0 64px rgba(255, 255, 255, 0.03), inset 0 -12px 4px 0 rgba(0, 0, 0, 0.3), 0 3px 3px 0 rgba(0, 0, 0, 0.3) !important;
+    }
 }

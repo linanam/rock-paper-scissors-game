@@ -1,0 +1,177 @@
+@import "./../../variables.css";
+
+.playerBoard {
+    background: url("./images/bg-pentagon.svg") no-repeat 50% 50%;
+    background-size: 56%;
+    box-sizing: border-box;
+    min-height: 430px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    width: var(--mobile);
+}
+
+.playerBoard [class*="button"] {
+    box-shadow: inset 0 -5px 2px 0 rgba(0, 0, 0, 0.3);
+    height: var(--player-board-button-size);
+    width: var(--player-board-button-size);
+    position: absolute;
+}
+
+.playerBoard [class*="button"]::after {
+    box-shadow: inset 0 5px 2px 0 rgba(98, 59, 99, 0.3);
+}
+
+.playerBoard + [class*="rulesContainer"] {
+    margin-top: 61px;
+}
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 95px auto 0;
+    max-width: 319px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board [class*="button"], .shadow {
+    height: var(--board-button-size);
+    padding: 15px;
+    width: var(--board-button-size);
+}
+
+.board [class*="scissors"] {
+    transform: translate(0);
+}
+
+.shadow {
+    box-sizing: border-box;
+}
+
+.shadow::after {
+    background: var(--button-shadow);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.label {
+    color: var(--main-text-color);
+    font-size: 16px;
+    display: block;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+.result {
+    color: var(--main-text-color);
+    flex-basis: 100%;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 74px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.playButton {
+    background: var(--main-text-color);
+    border-radius: 10px;
+    color: var(--dark-text);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 47px;
+    margin: 21px auto;
+    padding: 0 69px;
+    text-transform: uppercase;
+}
+
+.board + [class*="rulesContainer"] {
+    margin-top: 51px;
+}
+
+@media only screen and (min-width: 768px) {
+    .playerBoard {
+        background-position: 50% 39%;
+        background-size: 329px 313px;
+        min-height: 548px;
+    }
+
+    .playerBoard [class*="button"] {
+        height: var(--player-board-button-size__desktop);
+        width: var(--player-board-button-size__desktop);
+    }
+
+    .playerBoard + [class*="rulesContainer"] {
+        margin-top: -82px;
+    }
+
+    .board {
+        margin: 76px auto 0;
+        max-width: 80%;
+    }
+
+    .item {
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .board > div:first-child {
+        order: 1;
+    }
+
+    .board > div:nth-child(2) {
+        order: 3;
+    }
+
+    .label {
+        line-height: 1;
+        margin: 0 0 65px;
+    }
+
+    .result {
+        flex-basis: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        order: 1;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .board {
+        max-width: 60%
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .board {
+        max-width: 963px;
+    }
+
+    .board [class*="button"], .shadow {
+        height: var(--board-button-size__desktop);
+        padding: 35px;
+        width: var(--board-button-size__desktop);
+    }
+
+    .label {
+        font-size: 25px;
+    }
+
+    .result {
+        justify-content: start;
+        margin-top: 160px;
+    }
+}

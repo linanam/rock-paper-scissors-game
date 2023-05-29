@@ -1,0 +1,87 @@
+@import "./../../variables.css";
+
+.rulesContainer {
+    margin-bottom: 10px;
+}
+
+.button {
+    border: 2px solid var(--score-border-color);
+    border-radius: 10px;
+    color: var(--main-text-color);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 42px;
+    padding: 0 38px;
+    text-transform: uppercase;
+}
+
+.modal {
+    background: var(--score-table-bg);
+    color: var(--dark-text);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.modal h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 93px 0 95px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.modal img {
+    display: block;
+    margin: 0 auto;
+    width: 84%;
+}
+
+.closeButton {
+    background: url("./images/icon-close.svg") no-repeat 50% 50%;
+    height: var(--modal-close-size);
+    transform: translate(-50%, 0);
+    position: absolute;
+    bottom: 67px;
+    left: 50%;
+    width: var(--modal-close-size);
+}
+
+@media only screen and (min-width: 768px) {
+    .rulesContainer {
+        float: right;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .modal {
+        border-radius: 10px;
+        height: 460px;
+        top: 154px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 400px;
+    }
+
+    .modal h3 {
+        font-size: 32px;
+        margin: 29px 32px 18px;
+        text-align: left;
+    }
+
+    .closeButton {
+        transform: translate(0);
+        top: 38px;
+        right: 31px;
+        left: auto;
+        bottom: auto;
+    }
+}
